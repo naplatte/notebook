@@ -637,3 +637,6 @@ inline void operator delete[](void* ptr) {
 ```
 
 - 也可以对类成员函数new、new[]、delete、delete[]进行重载，用做内存池，这里有待继续研究
+
+#### ③示例
+
