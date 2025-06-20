@@ -640,3 +640,12 @@ inline void operator delete[](void* ptr) {
 
 #### ③示例
 
+### 10.关于强转
+
+#### ①static_cast
+
+#### ②dynamic_cast
+
+#### ③const_cast
+
+#### ④reinterpret_cast
