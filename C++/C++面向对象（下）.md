@@ -642,10 +642,12 @@ inline void operator delete[](void* ptr) {
 
 ### 10.关于强转
 
-#### ①static_cast
+https://zhuanlan.zhihu.com/p/258975506
 
-#### ②dynamic_cast
+**static_cast**
 
-#### ③const_cast
+**dynamic_cast**
 
-#### ④reinterpret_cast
+**const_cast**
+
+**reinterpret_cast**
