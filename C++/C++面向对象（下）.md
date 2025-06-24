@@ -640,7 +640,7 @@ inline void operator delete[](void* ptr) {
 
 #### ③示例
 
-### 10.关于强转
+### 10.C++强转
 
 https://zhuanlan.zhihu.com/p/258975506
 
@@ -651,3 +651,49 @@ https://zhuanlan.zhihu.com/p/258975506
 **const_cast**
 
 **reinterpret_cast**
+
+### 11.浅谈CMake
+
+- **跨平台的构建系统生成器**，告诉编译器如何编译你的项目
+  - 要编译哪些.cpp文件
+  - 编译出来的是可执行文件还是库
+  - 用哪个C++标准
+  - 链接哪些第三方库（比如OpenCV，Boost）
+
+- CMakeLists.txt最简单的结构
+
+```cmake
+cmake_minimum_required(VERSION 3.10)  # 声明需要的最低CMake版本
+
+project(my_project_name)              # 项目名称（可随便起）
+
+set(CMAKE_CXX_STANDARD 17)            # 设置 C++ 标准为 C++17
+set(CMAKE_CXX_STANDARD_REQUIRED True) # 强制要求使用该标准
+
+add_executable(my_program main.cpp)   # 添加可执行文件 target，来自 main.cpp
+```
+
+- CMake项目结构建议
+
+```css
+my_project/
+├── CMakeLists.txt         ← 主配置文件
+├── main.cpp
+├── include/               ← 存放头文件
+│   └── mylib.h
+├── src/                   ← 存放源文件
+│   └── mylib.cpp
+```
+
+- 链接第三方库
+
+```cmake
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+add_executable(my_program main.cpp)
+target_link_libraries(my_program ${OpenCV_LIBS})
+```
+
+
+
