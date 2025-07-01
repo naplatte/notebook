@@ -26,6 +26,50 @@
   - 绘制(draw)：构建需要有什么数据在图上，比如按钮、文本框、窗口位置，类似于将画中有什么内容用笔写下来；
   - 渲染(render)：将构建好的内容，用图形API（OpenGL）画在屏幕上，类似于根据画中的内容，完整的将画完成；
 
-- imgui做了什么
+#### 2.上手使用
 
-  
+- 首先就是配置CMake
+  - 安装SDL2后，CMake需要去找
+  - 头文件和链接库都需要安排上
+
+```cmake
+cmake_minimum_required(VERSION 3.15)
+
+set(CMAKE_TOOLCHAIN_FILE "D:/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+project(cpp_demo)
+
+set(CMAKE_CXX_STANDARD 17)
+
+# 查找 SDL2
+find_package(SDL2 CONFIG REQUIRED)
+find_package(OpenGL REQUIRED)
+
+# 包含头文件
+include_directories(
+        ${SDL2_INCLUDE_DIRS}
+        ${OPENGL_INCLUDE_DIR}
+        imgui
+        backends
+)
+
+# 源文件列表
+file(GLOB IMGUI_SRC
+        imgui/*.cpp
+        backends/*.cpp
+)
+
+add_executable(imgui_test main.cpp ${IMGUI_SRC})
+
+# 链接库
+target_link_libraries(imgui_test
+        SDL2::SDL2
+        SDL2::SDL2main
+        OpenGL::GL
+)
+```
+
+- 简单应用
+
+```cpp
+```
+

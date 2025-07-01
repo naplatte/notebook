@@ -103,6 +103,7 @@ c & d
 | \Sigma  | \sigma  |
 | \Phi    | \phi    |
 | \Omega  | \omega  |
+| \Eta    | \eta    |
 
 - 逻辑、集合、关系符号
 
