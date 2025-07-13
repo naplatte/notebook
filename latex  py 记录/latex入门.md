@@ -167,3 +167,6 @@ A'
 \infty
 ```
 
+- 不等号写法
+
+<img src="https://raw.githubusercontent.com/sleepyDev0x/Pictures/main/07b0ca40e7e76c00b6b75f144da5ec20.png" alt="image-20250713090814832" style="zoom:67%;" />	
